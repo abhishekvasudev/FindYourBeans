@@ -10,7 +10,7 @@ struct SplashView: View {
             mainContent
         }
         .onAppear(delay: 2.0) {
-//            coordinator.navigate(to: .onboarding)
+            coordinator.navigate(to: .onboarding)
         }
         .navigationDestination(
             path: $coordinator.path,
@@ -27,12 +27,16 @@ struct SplashView: View {
     private var mainContent: some View {
         VStack(spacing: Padding.thirty) {
             Spacer()
-            Image(.appLogoBg)
-                .shadow(color: Color.white.opacity(0.6), radius: 15, x: 0, y: 0)
+            appLogo
             title
             Spacer()
             footer
         }
+    }
+    
+    private var appLogo: some View {
+        Image(.appLogoBg)
+            .shadow(color: Color.white.opacity(0.6), radius: 15, x: 0, y: 0)
     }
     
     private var title: some View {

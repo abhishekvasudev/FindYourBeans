@@ -266,6 +266,9 @@
         }
       }
     },
+    "Let's Start" : {
+
+    },
     "login.action" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -298,6 +301,9 @@
           }
         }
       }
+    },
+    "Next" : {
+
     },
     "onboarding.body" : {
       "extractionState" : "manual",

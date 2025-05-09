@@ -4,6 +4,7 @@ import SwiftUI
 enum NavigationDestination: Hashable, View {
     case root
     case onboarding
+    case home
 //    case login
 //    case twoStepVerification
 //    case twoStepVerificationOTP(phoneNumber: String)
@@ -14,6 +15,8 @@ enum NavigationDestination: Hashable, View {
             SplashView()
         case .onboarding:
             OnboardingView()
+        case .home:
+            HomeView()
 //        case .login:
 //            LoginView()
 //        case .twoStepVerification:
