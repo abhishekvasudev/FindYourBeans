@@ -7,25 +7,31 @@ struct OnboardingView: View {
     private let viewModel = OnboardingViewModel()
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            Spacer()
             headerView
             onboardingCards
             continueButton
+            Spacer()
         }
         .withBackgroundColor()
     }
     
     // Top: Logo and App Title
     private var headerView: some View {
-        HStack {
+        VStack {
             Spacer()
-            Image(.appLogoBg)
-                .resizable()
-                .frame(width: 150, height: 150)
-            VStack {
-                title
+                .frame(height: 20)
+            HStack {
+                Spacer()
+                Image(.appLogoBg)
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                VStack {
+                    title
+                }
+                Spacer()
             }
-            Spacer()
         }
     }
     
@@ -43,7 +49,7 @@ struct OnboardingView: View {
     private var onboardingCards: some View {
         TabView(selection: $currentIndex) {
             ForEach(Array(viewModel.cards.enumerated()), id: \ .element.id) { index, card in
-                VStack(spacing: 10) {
+                VStack(spacing: 0) {
                     VStack {
                         VStack(spacing: 20) {
                             card.image
@@ -93,7 +99,6 @@ struct OnboardingView: View {
                 .cornerRadius(16)
                 .padding(.horizontal, 32)
         }
-        .padding(.bottom, 40)
     }
 }
 
@@ -103,10 +108,10 @@ struct OnboardingViewModel {
         OnboardingCard(image: Image(.onboarding1),
                        title: "Discover Local Cafés",
                        description: "Find the best coffee spots near you, curated by coffee lovers for coffee lovers."),
-        OnboardingCard(image: Image(.onboarding1),
+        OnboardingCard(image: Image(.onboarding2),
                        title: "Track Your Beans",
                        description: "Keep a log of your favorite beans and never forget what you loved."),
-        OnboardingCard(image:Image(.onboarding1),
+        OnboardingCard(image:Image(.onboarding3),
                        title: "Share & Connect",
                        description: "Invite friends, share your finds, and grow your coffee community.")
     ]
